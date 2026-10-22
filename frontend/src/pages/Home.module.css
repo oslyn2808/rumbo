@@ -1,0 +1,178 @@
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--ink-900);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.hello {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 18px 0 22px;
+  color: var(--text-on-dark-muted);
+}
+.search svg {
+  position: absolute;
+  left: 16px;
+  pointer-events: none;
+}
+.search input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px 0 46px;
+  border: 1px solid var(--ink-600);
+  border-radius: 16px;
+  background: var(--ink-800);
+  color: var(--text-on-dark);
+}
+.search input::placeholder {
+  color: var(--text-on-dark-muted);
+}
+.search input:focus-visible {
+  outline: none;
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px rgba(91, 214, 172, 0.25);
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.seeAll {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: var(--mint);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  margin: 0 -20px;
+  padding: 0 20px 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.skeletons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+.skeleton {
+  aspect-ratio: 16 / 11;
+  border-radius: 24px;
+  background: linear-gradient(100deg, var(--cream-200) 30%, var(--cream-100) 50%, var(--cream-200) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.route {
+  margin-top: 28px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+.routeTitle {
+  font-size: 1.5rem;
+}
+.stops {
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.stopNumber {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ink-900);
+  color: var(--mint);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.stopText {
+  display: flex;
+  flex-direction: column;
+  min-height: 44px;
+  justify-content: center;
+  color: var(--text);
+  text-decoration: none;
+}
+.stopText em {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Filtros: la pildora oscura se desliza al filtro elegido. */
+.chip {
+  position: relative;
+  isolation: isolate;
+}
+.chip[aria-pressed='true'] {
+  background: var(--white);
+  border-color: var(--ink-900);
+}
+.chipPill {
+  position: absolute;
+  inset: -1.5px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--ink-900);
+}
+.chipLabel {
+  position: relative;
+}
+
+/* Encabezado con topografia animada de fondo. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0 0 -40px;
+  z-index: -1;
+  opacity: 0.85;
+  pointer-events: none;
+  mask-image: linear-gradient(#000 35%, transparent 100%);
+}

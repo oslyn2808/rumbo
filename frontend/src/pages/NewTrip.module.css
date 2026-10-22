@@ -1,0 +1,130 @@
+.page {
+  position: absolute;
+  inset: 0;
+  background: var(--ink-900);
+  color: var(--text-on-dark);
+}
+.scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.sheet {
+  min-height: calc(100% - 190px);
+  padding-bottom: 48px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0;
+}
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.suggest {
+  display: flex;
+  gap: 8px;
+  margin: 10px -20px 0;
+  padding: 0 20px 4px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.suggest::-webkit-scrollbar {
+  display: none;
+}
+.suggest > * {
+  flex: none;
+}
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.stepControl {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--cream-200);
+}
+.stepControl button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--text);
+}
+.stepControl button:disabled {
+  opacity: 0.4;
+}
+.stepControl output {
+  min-width: 44px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.error {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(7, 17, 15, 0.94);
+  color: var(--text-on-dark);
+  text-align: center;
+}
+.loading p {
+  margin-top: 12px;
+  font-size: 1.6rem;
+}
+.loading small {
+  color: var(--text-on-dark-muted);
+}

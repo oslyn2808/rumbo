@@ -1,0 +1,31 @@
+{
+  "name": "rumbo-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API de Rumbo: destinos, viajes con IA y reconocimiento de monumentos",
+  "scripts": {
+    "setup": "node scripts/setup-env.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch src/server.js",
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.1"
+  }
+}

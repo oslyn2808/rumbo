@@ -1,0 +1,17 @@
+.layout {
+  position: absolute;
+  inset: 0;
+  background: var(--ink-900);
+}
+
+.scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}

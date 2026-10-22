@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "Rumbo",
+    "slug": "rumbo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#0b1714",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0b1714"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.rumbo.app"
+    },
+    "android": {
+      "package": "com.rumbo.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0b1714",
+        "foregroundImage": "./assets/icon.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Rumbo usa la cámara para fotografiar monumentos e identificarlos."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Rumbo usa tu ubicación para identificar monumentos y mostrar destinos cercanos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Rumbo usa tus fotos para identificar monumentos."
+        }
+      ]
+    ]
+  }
+}

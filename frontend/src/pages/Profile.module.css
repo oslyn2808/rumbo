@@ -1,0 +1,96 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 28px;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--ink-900);
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0;
+}
+.stats div {
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+.stats dt {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.stats dd {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+.itemIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--ink-900);
+  color: var(--mint);
+}
+.itemText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+  font-size: 0.9rem;
+}
+.trash {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-muted);
+}
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

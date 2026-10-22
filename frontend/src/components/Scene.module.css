@@ -1,0 +1,592 @@
+/* Animaciones continuas de la ilustracion. Son CSS (solo transform y opacity) para que
+   corran fluidas aunque haya muchas a la vez. La clase .still las apaga (miniaturas). */
+
+.svg {
+  --sway: 1.6;
+  display: block;
+}
+/* Solo las piezas animadas giran o escalan sobre su propia caja; el resto usa el origen del SVG. */
+.spin, .pulse, .flap, .splash, .sway, .leaf, .smoke, .steam, .graze, .tail,
+.step, .buzz, .paddle, .peck, .hang, .wing, .glow, .flame {
+  transform-box: fill-box;
+}
+.still *,
+.still {
+  animation: none !important;
+}
+/* Modo liviano (tarjetas): se apagan los detalles pequenos; quedan nubes, agua, arboles, humo y lluvia. */
+.lite .leaf,
+.lite .twinkle,
+.lite .foam,
+.lite .shimmer,
+.lite .crab,
+.lite .graze,
+.lite .tail,
+.lite .step,
+.lite .buzz,
+.lite .hover,
+.lite .wing,
+.lite .butterfly,
+.lite .peck,
+.lite .hang,
+.lite .steam,
+.lite .mist,
+.lite .pulse,
+.lite .glow,
+.lite .flame,
+.lite .flap,
+.lite .paddle {
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .svg * {
+    animation: none !important;
+  }
+}
+
+.sky stop {
+  transition: stop-color 1.2s ease;
+}
+
+/* ---------- Cielo ---------- */
+
+.celestial {
+  transition: opacity 1.2s ease;
+}
+.spin {
+  transform-origin: 50% 50%;
+  animation: spin 70s linear infinite;
+}
+.pulse {
+  transform-origin: 50% 50%;
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+.twinkle {
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.cloud {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition:
+    opacity 1.3s ease,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cloudOn {
+  opacity: 1;
+  transform: none;
+}
+.cloud path,
+.cloud ellipse,
+.cloud circle {
+  transition: fill 1.2s ease;
+}
+.drift {
+  animation: drift 24s ease-in-out infinite alternate;
+}
+
+.flock {
+  animation: fly 28s linear infinite;
+}
+.flap {
+  transform-origin: 50% 100%;
+  animation: flap 0.5s ease-in-out infinite alternate;
+}
+
+.gust {
+  animation: gust 2.8s ease-in infinite;
+  opacity: 0;
+}
+
+/* ---------- Clima ---------- */
+
+.drop {
+  animation: fall 0.8s linear infinite;
+}
+.splash {
+  transform-origin: 50% 50%;
+  animation: splash 1.1s ease-out infinite;
+}
+.flash {
+  animation: flash 7s linear infinite;
+  opacity: 0;
+}
+
+/* ---------- Paisaje ---------- */
+
+.sway {
+  transform-origin: 50% 100%;
+  animation: sway 3.6s ease-in-out infinite alternate;
+}
+.leaf {
+  transform-origin: 0% 50%;
+  animation: leaf 2.4s ease-in-out infinite alternate;
+}
+.wave {
+  animation: wave 4s linear infinite;
+}
+.foam {
+  animation: foam 3.2s ease-in-out infinite alternate;
+}
+.bob {
+  animation: bob 3s ease-in-out infinite alternate;
+}
+.sail {
+  animation: sail 40s ease-in-out infinite alternate;
+}
+.crab {
+  animation: crab 9s ease-in-out infinite alternate;
+}
+.smoke {
+  transform-origin: 50% 50%;
+  animation: smoke 6s ease-out infinite;
+  opacity: 0;
+}
+.steam {
+  transform-origin: 50% 100%;
+  animation: steam 3.4s ease-out infinite;
+  opacity: 0;
+}
+.shimmer {
+  animation: shimmer 3s ease-in-out infinite alternate;
+}
+.graze {
+  transform-origin: 100% 0%;
+  animation: graze 5s ease-in-out infinite;
+}
+.tail {
+  transform-origin: 0% 0%;
+  animation: tail 1.6s ease-in-out infinite alternate;
+}
+.falls {
+  animation: falls 0.7s linear infinite;
+}
+.walker {
+  animation: walker 22s ease-in-out infinite alternate;
+}
+.step {
+  transform-origin: 50% 0%;
+  animation: step 0.45s ease-in-out infinite alternate;
+}
+.hover {
+  animation: hover 2.2s ease-in-out infinite alternate;
+}
+.buzz {
+  transform-origin: 0% 100%;
+  animation: buzz 0.08s linear infinite alternate;
+}
+.canoe {
+  animation: canoe 26s ease-in-out infinite alternate;
+}
+.paddle {
+  transform-origin: 50% 20%;
+  animation: paddle 1.4s ease-in-out infinite alternate;
+}
+.peck {
+  transform-origin: 30% 80%;
+  animation: peck 4s ease-in-out infinite;
+}
+.hang {
+  transform-origin: 50% 0%;
+  animation: hang 6s ease-in-out infinite alternate;
+}
+.butterfly {
+  animation: butterfly 12s ease-in-out infinite alternate;
+}
+.wing {
+  transform-origin: 50% 50%;
+  animation: wing 0.25s ease-in-out infinite alternate;
+}
+.firefly {
+  animation:
+    blink 2.6s ease-in-out infinite alternate,
+    wander 7s ease-in-out infinite alternate;
+}
+.glow {
+  transform-origin: 50% 50%;
+  animation: glow 2.2s ease-in-out infinite alternate;
+}
+.lava {
+  animation: lava 2.4s linear infinite;
+}
+.flame {
+  transform-origin: 50% 100%;
+  animation: flame 0.35s ease-in-out infinite alternate;
+}
+.mist {
+  animation: mist 18s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.92);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+@keyframes twinkle {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes drift {
+  from {
+    transform: translateX(-18px);
+  }
+  to {
+    transform: translateX(22px);
+  }
+}
+@keyframes fly {
+  from {
+    transform: translate(-80px, 0);
+  }
+  50% {
+    transform: translate(190px, -14px);
+  }
+  to {
+    transform: translate(480px, 6px);
+  }
+}
+@keyframes flap {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(-0.6);
+  }
+}
+@keyframes gust {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+}
+@keyframes fall {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-16px, 360px);
+  }
+}
+@keyframes splash {
+  from {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%,
+  60%,
+  62%,
+  66%,
+  100% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 0.85;
+  }
+  64% {
+    opacity: 0.6;
+  }
+}
+@keyframes sway {
+  from {
+    transform: rotate(calc(var(--sway) * var(--k, 1) * -1deg));
+  }
+  to {
+    transform: rotate(calc(var(--sway) * var(--k, 1) * 1deg));
+  }
+}
+@keyframes leaf {
+  from {
+    transform: rotate(calc(var(--sway) * -2deg)) scaleX(1);
+  }
+  to {
+    transform: rotate(calc(var(--sway) * 2.5deg)) scaleX(0.94);
+  }
+}
+@keyframes wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(40px);
+  }
+}
+@keyframes foam {
+  from {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(5px);
+    opacity: 0.35;
+  }
+}
+@keyframes bob {
+  from {
+    transform: translateY(-1.5px);
+  }
+  to {
+    transform: translateY(1.5px);
+  }
+}
+@keyframes sail {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120px);
+  }
+}
+@keyframes crab {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  80%,
+  100% {
+    transform: translateX(46px);
+  }
+}
+@keyframes smoke {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate(18px, -80px) scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleY(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-16px) scaleY(1.2);
+    opacity: 0;
+  }
+}
+@keyframes shimmer {
+  from {
+    transform: translateX(-6px);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateX(6px);
+    opacity: 0.8;
+  }
+}
+@keyframes graze {
+  0%,
+  45%,
+  100% {
+    transform: rotate(0deg);
+  }
+  55%,
+  85% {
+    transform: rotate(28deg);
+  }
+}
+@keyframes tail {
+  from {
+    transform: rotate(-12deg);
+  }
+  to {
+    transform: rotate(14deg);
+  }
+}
+@keyframes falls {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+@keyframes walker {
+  0% {
+    transform: translate(124px, 160px);
+  }
+  25% {
+    transform: translate(165px, 171px);
+  }
+  50% {
+    transform: translate(210px, 175px);
+  }
+  75% {
+    transform: translate(255px, 170px);
+  }
+  100% {
+    transform: translate(296px, 157px);
+  }
+}
+@keyframes step {
+  from {
+    transform: rotate(-18deg);
+  }
+  to {
+    transform: rotate(18deg);
+  }
+}
+@keyframes hover {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-6px, -4px);
+  }
+  100% {
+    transform: translate(4px, 2px);
+  }
+}
+@keyframes buzz {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(-0.4);
+  }
+}
+@keyframes canoe {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150px);
+  }
+}
+@keyframes paddle {
+  from {
+    transform: rotate(-30deg);
+  }
+  to {
+    transform: rotate(25deg);
+  }
+}
+@keyframes peck {
+  0%,
+  70%,
+  100% {
+    transform: rotate(0deg);
+  }
+  78%,
+  90% {
+    transform: rotate(-14deg);
+  }
+}
+@keyframes hang {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+@keyframes butterfly {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -18px);
+  }
+  50% {
+    transform: translate(60px, 4px);
+  }
+  75% {
+    transform: translate(86px, -22px);
+  }
+  100% {
+    transform: translate(120px, -6px);
+  }
+}
+@keyframes wing {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.25);
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes wander {
+  from {
+    transform: translate(-6px, 4px);
+  }
+  to {
+    transform: translate(8px, -6px);
+  }
+}
+@keyframes glow {
+  from {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+@keyframes lava {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -30;
+  }
+}
+@keyframes flame {
+  from {
+    transform: scale(0.9, 0.85) skewX(-4deg);
+  }
+  to {
+    transform: scale(1.05, 1.1) skewX(4deg);
+  }
+}
+@keyframes mist {
+  from {
+    transform: translateX(-30px);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
